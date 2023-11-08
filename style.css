@@ -1,0 +1,25 @@
+body {
+  background-color: #333;
+}
+
+.mouse {
+  position: relative;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+}
+
+.animation {
+  animation: multbuble 1s ease 0.5s infinite;
+}
+
+@keyframes multbuble {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1) translateY(-100px);
+  }
+}
