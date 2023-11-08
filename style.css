@@ -20,6 +20,6 @@ body {
     transform: scale(0);
   }
   100% {
-    transform: scale(1) translateY(-100px);
+    transform: scale(1);
   }
 }
