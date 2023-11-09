@@ -3,23 +3,24 @@ body {
 }
 
 .mouse {
-  position: relative;
-  background-color: red;
-  border-radius: 50%;
+  position: fixed;
+  background-color: rebeccapurple;
+  /* border-radius: 50%; */
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
+  transform-origin: center;
+  width: 20px;
+  height: 20px;
 }
 
 .animation {
-  animation: multbuble 1s ease 0.5s infinite;
+  animation: multbuble 1s ease forwards;
 }
 
 @keyframes multbuble {
   0% {
-    transform: scale(0);
+    transform: translateY(0);
   }
   100% {
-    transform: scale(1);
+    transform: translateY(-500px);
   }
 }
