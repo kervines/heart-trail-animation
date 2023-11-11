@@ -5,25 +5,29 @@ const divMouseEl = document.querySelectorAll('.mouse');
 const createElPrincipal = (element, x, y) => {
   const divEl = document.createElement('span');
   divEl.classList.add('mouse', 'principal');
-  divEl.style.left = `${x}px`;
-  divEl.style.top = `${y}px`;
   element.appendChild(divEl);
+  const height = divEl.clientHeight;
+  divEl.style.left = `${x - height / 2}px`;
+  divEl.style.top = `${y - height / 2}px`;
 };
 
 const createElMiddle = (element, x, y) => {
   const divEl = document.createElement('span');
+
   divEl.classList.add('mouse', 'principal', 'animation--middle');
-  divEl.style.left = `${x}px`;
-  divEl.style.top = `${y}px`;
   element.appendChild(divEl);
+  const height = divEl.clientHeight;
+  divEl.style.left = `${x - height / 2}px`;
+  divEl.style.top = `${y - height / 2}px`;
 };
 
 const createElend = (element, x, y) => {
   const divEl = document.createElement('span');
   divEl.classList.add('mouse', 'principal', 'animation--end');
-  divEl.style.left = `${x}px`;
-  divEl.style.top = `${y}px`;
   element.appendChild(divEl);
+  const height = divEl.clientHeight;
+  divEl.style.left = `${x - height / 2}px`;
+  divEl.style.top = `${y - height / 2}px`;
 };
 document.addEventListener('mousemove', (event) => {
   const x = event.clientX;
