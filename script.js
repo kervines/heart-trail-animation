@@ -10,13 +10,13 @@ const createElementTrail = (element, x, y) => {
   spanEl.style.left = `${x}px`;
   spanEl.style.top = `${y}px`;
 
-  // const colorRandom = Math.round(Math.random() * 0xffffff)
-  //   .toString(16)
-  //   .padStart(6, 0);
-  const colorRandom = Math.round(Math.random() * 360);
-
-  spanEl.style.filter = `hue-rotate(${colorRandom}deg)`;
+  // const colorRandom2 = Math.round(Math.random() * 0xffffff).toString(16).padStart(6, 0);
+  // spanEl.style.backgroundColor = `#${colorRandom2}`;
   // spanEl.style.backgroundBlendMode = 'multiply';
+
+  const colorRandom = Math.round(Math.random() * 360);
+  spanEl.style.filter = `hue-rotate(${colorRandom}deg)`;
+
   setTimeout(() => {
     spanEl.remove();
   }, 3000);
