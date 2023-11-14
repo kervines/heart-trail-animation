@@ -1,48 +1,29 @@
 body {
   background-color: #333;
+  margin: 0;
+  height: 100vh;
 }
 
-.mouse {
-  position: fixed;
-  background-image: url(https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png);
+span {
+  position: absolute;
+  background-image: url();
   background-size: cover;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+
+  animation: animate 6s linear;
 }
 
-.principal {
-  animation-name: principal;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  z-index: 3;
-}
-
-.animation--middle {
-  width: 30px;
-  height: 25px;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
-  z-index: 2;
-}
-.animation--end {
-  width: 15px;
-  height: 15px;
-  animation-duration: 4s;
-
-  animation-timing-function: ease;
-  z-index: 1;
-}
-
-@keyframes principal {
+@keyframes animate {
   0% {
-    transform: scale(0.5) translateY(0);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
-  50% {
-    transform: scale(1);
-  }
+
   100% {
-    transform: translateY(-300px);
+    transform: translate(-50%, -5000%);
     opacity: 0;
   }
 }
