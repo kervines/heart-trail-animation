@@ -10,20 +10,18 @@ const createElementTrail = (element, x, y) => {
   spanEl.style.left = `${x}px`;
   spanEl.style.top = `${y}px`;
 
-  // const colorRandom2 = Math.round(Math.random() * 0xffffff).toString(16).padStart(6, 0);
-  // spanEl.style.backgroundColor = `#${colorRandom2}`;
-  // spanEl.style.backgroundBlendMode = 'multiply';
-
-  const colorRandom = Math.round(Math.random() * 360);
-  spanEl.style.filter = `hue-rotate(${colorRandom}deg)`;
+  colorRandom(spanEl.style.filter);
 
   setTimeout(() => {
     spanEl.remove();
   }, 3000);
 };
 
-bodyEl.addEventListener('mousemove', (event) => {
-  const x = event.offsetX;
-  const y = event.offsetY;
-  createElementTrail(bodyEl, x, y);
+function colorRandom(element) {
+  const colorRandom = Math.round(Math.random() * 360);
+  element = `hue-rotate(${colorRandom}deg)`;
+}
+
+bodyEl.addEventListener('mousemove', ({ offsetX, offsetY }) => {
+  createElementTrail(bodyEl, offsetX, offsetY);
 });
